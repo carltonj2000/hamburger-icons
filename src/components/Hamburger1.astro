@@ -1,52 +1,40 @@
 ---
 ---
 
-<div class="hamburger">
-  <button class="button-one" aria-expanded="false">
-    <svg
-      fill="var(--button-color)"
-      class="hamburger"
-      viewBox="0 0 100 100"
-      width="250"
-    >
-      <rect class="line top" width="80" height="10" x="10" y="25" rx="5"></rect>
-      <rect class="line middle" width="80" height="10" x="10" y="45" rx="5"
-      ></rect>
-      <rect class="line bottom" width="80" height="10" x="10" y="65" rx="5"
-      ></rect>
-    </svg>
-  </button>
-  <button class="button-two"></button>
-  <button class="button-three"></button>
-</div>
+<button aria-expanded="false">
+  <svg fill="var(--button-color)" viewBox="0 0 100 100" width="250">
+    <rect class="line top" width="80" height="10" x="10" y="25" rx="5"></rect>
+    <rect class="line middle" width="80" height="10" x="10" y="45" rx="5"
+    ></rect>
+    <rect class="line bottom" width="80" height="10" x="10" y="65" rx="5"
+    ></rect>
+  </svg>
+</button>
 <style>
   button {
-    backgroud: transparent;
+    --button-color: #1e2fff;
     border: 10px solid var(--button-color, #000);
     border-radius: 1rem;
   }
-  .button-one {
-    --button-color: #1e2fff;
-  }
-  .button-one .line {
+  button .line {
     transition: y 300ms ease-in 300ms, rotate 300ms ease-in, opacity 0ms 300ms;
     transform-origin: center;
   }
-  .button-one:hover .line {
+  button:hover .line {
     transition: y 300ms ease-in, rotate 300ms ease-in 300ms, opacity 0ms 300ms;
   }
-  .button-one:hover :is(.top, .bottom) {
+  button:hover :is(.top, .bottom) {
     y: 45;
   }
-  .button-one:hover .top {
+  button:hover .top {
     rotate: 45deg;
   }
-  .button-one:hover .middle {
+  button:hover .middle {
     opacity: 0;
   }
-  .button-one:hover .bottom {
+  button:hover .bottom {
     rotate: -45deg;
   }
-  .button-one[aria-expanded="true"] .top {
+  button[aria-expanded="true"] .top {
   }
 </style>

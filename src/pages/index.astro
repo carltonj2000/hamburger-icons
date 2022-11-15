@@ -1,12 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hamburger1 from "../components/Hamburger1.astro";
+import Hamburger2 from "../components/Hamburger2.astro";
 ---
 
 <Layout title="Hamburgers">
   <main>
+    <Hamburger2 />
     <Hamburger1 />
   </main>
 </Layout>
 
-<style></style>
+<style>
+  main {
+    display: flex;
+    gap: 2rem;
+  }
+</style>

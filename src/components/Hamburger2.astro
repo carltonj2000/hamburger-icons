@@ -1,0 +1,82 @@
+---
+---
+
+<button aria-expanded="false">
+  <svg stroke="var(--button-color)" viewBox="0 0 100 100" width="250">
+    <line
+      class="line top"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-dasharray="80"
+      stroke-dashoffset="0"
+      x2="15"
+      x1="85"
+      y1="27.5"
+      y2="27.5"></line>
+    <line
+      class="line middle"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-dasharray="80"
+      stroke-dashoffset="0"
+      x1="15"
+      x2="85"
+      y1="47.5"
+      y2="47.5"></line>
+    <line
+      class="line bottom"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-dasharray="80"
+      stroke-dashoffset="0"
+      x1="15"
+      x2="85"
+      y1="67.5"
+      y2="67.5"></line>
+  </svg>
+</button>
+<style>
+  button {
+    --button-color: #5e5fff;
+    border: 10px solid var(--button-color, #000);
+    border-radius: 1rem;
+  }
+  button .line {
+    animation: to-open-icon 1s forwards;
+  }
+  button .line.top {
+    --rotation: -45deg;
+    transform-origin: 85px 55px;
+  }
+  button .line.bottom {
+    --rotation: 45deg;
+    transform-origin: 60px 55px;
+  }
+  button:hover .line {
+    animation: to-close-icon 1s forwards;
+  }
+  @keyframes to-close-icon {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    40% {
+      stroke-dashoffset: 79.9;
+    }
+    60% {
+      stroke-dashoffset: 79.9;
+      rotate: var(--rotation);
+    }
+    100% {
+      stroke-dashoffset: 0;
+      rotate: var(--rotation);
+    }
+  }
+  @keyframes to-open-icon {
+    0% {
+      stroke-dashoffset: 79.9;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
